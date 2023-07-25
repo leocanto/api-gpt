@@ -9,12 +9,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-export function create({ prompt }) {
-    return openai.createCompletion({
-        model: "text-davinci-003",
-        prompt,
-        max_tokens: 5,
-        temperature: 0,
-    });
-}
+export const create = (prompt) => openai.createCompletion({
+    model: "text-davinci-003",
+    prompt,
+    max_tokens: 15,
+    temperature: 0,
+});
+
 
